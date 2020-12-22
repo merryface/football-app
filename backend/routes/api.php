@@ -19,4 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Players
 Route::get('/players', [Players::class, "index"]); // return all players
+Route::post('/players', [Players::class, "store"]); // add a new player
+Route::delete('players/{player}', [Players::class, "destroy"]); // remove a player
+Route::patch('players/{player}', [Players::class, "update"]); // Update a player
