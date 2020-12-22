@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Players;
+use App\Http\Controllers\Matches;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,11 @@ Route::get('/players', [Players::class, "index"]); // return all players
 Route::post('/players', [Players::class, "store"]); // add a new player
 Route::delete('players/{player}', [Players::class, "destroy"]); // remove a player
 Route::patch('players/{player}', [Players::class, "update"]); // Update a player
+
+
+// Matches
+Route::get('/matches', [Matches::class, "index"]); // return all players
+Route::get('/matches/{match}', [Matches::class, "show"]); // return a specific player
+Route::post('/matches', [Matches::class, "store"]); // add a new player
+Route::delete('matches/{match}', [Matches::class, "destroy"]); // remove a player
+Route::patch('matches/{match}', [Matches::class, "update"]); // Update a player
