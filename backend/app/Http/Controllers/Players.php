@@ -13,7 +13,7 @@ class Players extends Controller
         return Player::all();
     }
 
-    public function store(Player $request) // add new player
+    public function store(Request $request) // add new player
     {
         $data = $request->all();
         $player = Player::create($data);
