@@ -12,9 +12,9 @@ class Matches extends Controller
         return Match::all();
     }
 
-    public function show(Match $friend) // return individual friend
+    public function show(Match $match) // return individual Match
     {
-        return Match::find($friend);
+        return Match::find($match);
     }
 
     public function store(Request $request) // add new Match
