@@ -25,9 +25,9 @@ Route::delete('players/{player}', [Players::class, "destroy"]); // remove a play
 Route::patch('players/{player}', [Players::class, "update"]); // Update a player
 
 
-// Matches
-Route::get('/matches', [Matches::class, "index"]); // return all players
-Route::get('/matches/{match}', [Matches::class, "show"]); // return a specific player
-Route::post('/matches', [Matches::class, "store"]); // add a new player
-Route::delete('matches/{match}', [Matches::class, "destroy"]); // remove a player
-Route::patch('matches/{match}', [Matches::class, "update"]); // Update a player
+// gamees
+Route::get('/games', [gamees::class, "index"]); // return all players
+Route::get('/games/{game}', [gamees::class, "show"]); // return a specific player
+Route::post('/games', [gamees::class, "store"]); // add a new player
+Route::delete('games/{game}', [gamees::class, "destroy"]); // remove a player
+Route::patch('games/{game}', [gamees::class, "update"]); // Update a player
