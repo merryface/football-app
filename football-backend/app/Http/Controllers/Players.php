@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PlayerRequst;
+use App\Http\Resources\API\PlayerResource;
 use App\Models\Player;
 
 class Players extends Controller
 {
 public function index() // show all players
     {
-        return Player::all();
+        return PlayerResource::collection(Player::all());
     }
 
     public function store(PlayerRequst $request) // add new player
@@ -17,7 +18,8 @@ public function index() // show all players
         $data = $request->all();
         $player = Player::create($data);
 
-        return $player;
+        // Return Resource
+        return new PlayerResource($player);
     }
 
     public function destroy(Player $player) // delete player
@@ -30,6 +32,8 @@ public function index() // show all players
     {
         $data = $request->all();
         $player->fill($data)->save();
-        return $player;
+
+        // Return Resource
+        return new PlayerResource($player);
     }
 }
