@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use Illuminate\Http\Request;
+use App\Http\Requests\GamesRequest;
 
 class Games extends Controller
 {
@@ -17,7 +18,7 @@ class Games extends Controller
         return Game::find($Game);
     }
 
-    public function store(Request $request) // add new Game
+    public function store(GamesRequest $request) // add new Game
     {
         $data = $request->all();
         $Game = Game::create($data);
@@ -31,7 +32,7 @@ class Games extends Controller
         return response(null, 204);
     }
 
-    public function update(Request $request, Game $Game) //update Game
+    public function update(GamesRequest $request, Game $Game) //update Game
     {
         $data = $request->all();
         $Game->fill($data)->save();
