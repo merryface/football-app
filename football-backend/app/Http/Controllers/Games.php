@@ -5,37 +5,38 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use Illuminate\Http\Request;
 use App\Http\Requests\GamesRequest;
+use App\Http\Resources\API\GameResource;
 
 class Games extends Controller
 {
     public function index() // show all Games
     {
-        return Game::all();
+        return GameResource::collection(Game::all());
     }
 
-    public function show(Game $Game) // return individual Game
+    public function show(Game $game) // return individual Game
     {
-        return Game::find($Game);
+        return new GameResource($game);
     }
 
     public function store(GamesRequest $request) // add new Game
     {
         $data = $request->all();
-        $Game = Game::create($data);
+        $game = Game::create($data);
 
-        return $Game;
+        return new GameResource($game);
     }
 
-    public function destroy(Game $Game) // delete Game
+    public function destroy(Game $game) // delete Game
     {
-        $Game->delete();
+        $game->delete();
         return response(null, 204);
     }
 
-    public function update(GamesRequest $request, Game $Game) //update Game
+    public function update(GamesRequest $request, Game $game) //update Game
     {
         $data = $request->all();
-        $Game->fill($data)->save();
-        return $Game;
+        $game->fill($data)->save();
+        return new GameResource($game);
     }
 }
