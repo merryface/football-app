@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Games;
+use App\Http\Controllers\Players;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +28,8 @@ Route::patch('players/{player}', [Players::class, "update"]); // Update a player
 
 
 // gamees
-Route::get('/games', [gamees::class, "index"]); // return all players
-Route::get('/games/{game}', [gamees::class, "show"]); // return a specific player
-Route::post('/games', [gamees::class, "store"]); // add a new player
-Route::delete('games/{game}', [gamees::class, "destroy"]); // remove a player
-Route::patch('games/{game}', [gamees::class, "update"]); // Update a player
+Route::get('/games', [Games::class, "index"]); // return all players
+Route::get('/games/{game}', [Games::class, "show"]); // return a specific player
+Route::post('/games', [Games::class, "store"]); // add a new player
+Route::delete('games/{game}', [Games::class, "destroy"]); // remove a player
+Route::patch('games/{game}', [Games::class, "update"]); // Update a player

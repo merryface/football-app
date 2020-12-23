@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PlayerRequst;
 use App\Models\Player;
-use Illuminate\Http\Request;
 
 class Players extends Controller
 {
@@ -12,7 +12,7 @@ public function index() // show all players
         return Player::all();
     }
 
-    public function store(Request $request) // add new player
+    public function store(PlayerRequst $request) // add new player
     {
         $data = $request->all();
         $player = Player::create($data);
@@ -26,7 +26,7 @@ public function index() // show all players
         return response(null, 204);
     }
 
-    public function update(Request $request, Player $player) //update player
+    public function update(PlayerRequst $request, Player $player) //update player
     {
         $data = $request->all();
         $player->fill($data)->save();
