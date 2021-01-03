@@ -28,8 +28,8 @@ Route::patch('players/{player}', [Players::class, "update"]); // Update a player
 
 
 // gamees
-Route::get('/games', [Games::class, "index"]); // return all players
-Route::get('/games/{game}', [Games::class, "show"]); // return a specific player
+Route::get('/games', [Games::class, "index"]); // return all games
+Route::get('/games/{game}', [Games::class, "show"]); // return a specific game
 Route::post('/games', [Games::class, "store"]); // add a new player
-Route::delete('games/{game}', [Games::class, "destroy"]); // remove a player
-Route::patch('games/{game}', [Games::class, "update"]); // Update a player
+Route::delete('games/{game}', [Games::class, "destroy"]); // remove a game
+Route::patch('games/{game}', [Games::class, "update"]); // Update a game
