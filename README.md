@@ -1,4 +1,5 @@
 # [Teemz](https://teemz-app.github.io/teemz-frontend/)
+![GitHub repo size](https://img.shields.io/github/repo-size/teemz-app/teemz-backend?logo=GitHub&style=for-the-badge) <br>
 Teemz is a football team generator, where the user can set the number of players per team, give the teams a name, and then save a match's result in a database. Users can also add new players into the database, as well as access a list of all players and all saved matches. The app uses Axios to make RESTful API requests. This repo is the Laravel backend where the API endpoints were created.
 
 ### Generating Teams
