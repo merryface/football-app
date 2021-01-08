@@ -1,3 +1,16 @@
+# Teemz
+Teemz is a football team generator, where the user can set the number of players per team, give the teams a name, and then save a match's result in a database. Users can also add new players into the database, as well as access a list of all players and all saved matches. The app uses Axios to make RESTful API requests. This repo is the Laravel backend where the API endpoints were created.
+
+### Generating Teams
+![Generating Teams gif](/readmeAssets/generateTeams.gif) <br>
+The action of pressing the `Generate Teams` makes an axios `GET` request to get all the players. The React then creates the teams. Once the user modifies the game data and the user presses the `Save Game` button. This creates a Game `POST` request, which stores the game data in the database.
+
+### Adding and Seeing players
+![Adding and seeing players gif](/readmeAssets/addandseeplayer.gif) <br>
+The user can type the name of a new player in an input field on the menu page. When the user clicks on `Add Player` an axios `POST` request is sent to save the new player into the database, defaulting their wins and losses to 0. The user can then view this and all the other players in the database by clicking `See Players`, which makes an axios `GET` request for all the players. A similar process happens when pressing the `See Matches`. 
+
+
+
 # Table of contents
 
 - [Table of contents](#table-of-contents)
